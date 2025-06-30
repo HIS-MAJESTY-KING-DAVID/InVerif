@@ -7,6 +7,9 @@ export const metadata: Metadata = {
   generator: 'InVerif',
 }
 
+// This is required for GitHub Pages
+const basePath = process.env.NODE_ENV === 'production' ? '/InVerif' : '';
+
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -14,6 +17,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      <head>
+        <base href={basePath} />
+      </head>
       <body>{children}</body>
     </html>
   )
