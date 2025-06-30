@@ -1,0 +1,41 @@
+{
+  "css.lint.unknownAtRules": "ignore",
+  "editor.quickSuggestions": {
+    "strings": true,
+    "other": true,
+    "comments": false
+  },
+  "editor.suggest.showWords": false,
+  "editor.suggestOnTriggerCharacters": true,
+  "css.validate": false,
+  "tailwindCSS.includeLanguages": {
+    "typescript": "javascript",
+    "typescriptreact": "javascript",
+    "plaintext": "html"
+  },
+  "tailwindCSS.emmetCompletions": true,
+  "tailwindCSS.validate": true,
+  "tailwindCSS.files.exclude": [
+    "**/.git/**",
+    "**/node_modules/**",
+    "**/.hg/**",
+    "**/.svn/**"
+  ],
+  "tailwindCSS.experimental.classRegex": [
+    ["class:\\s*\"([^\"]*)\"", "'([^']*)'"],
+    ["class:\\s*'([^']*)'"],
+    ["class:\\s*`([^`]*)`"],
+    ["class=\"([^\"]*)\""],
+    ["class='([^']*)'"],
+    ["class=\\s*\\{`((?:[^`]|\\n)*)`\\}"]
+  ],
+  "editor.parameterHints.enabled": true,
+  "editor.snippetSuggestions": "inline",
+  "files.associations": {
+    "*.css": "tailwindcss"
+  },
+  "emmet.includeLanguages": {
+    "javascript": "javascriptreact",
+    "typescript": "typescriptreact"
+  }
+}
