@@ -13,10 +13,14 @@ const nextConfig = {
   // Add base path for GitHub Pages
   basePath: isProd ? '/InVerif' : '',
   assetPrefix: isProd ? '/InVerif/' : '',
-  // Output standalone for GitHub Pages
+  // Enable static export
   output: 'export',
-  // Optional: Change the output directory to 'docs' for GitHub Pages
-  distDir: 'out',
+  // Disable image optimization API (not needed for static export)
+  images: {
+    unoptimized: true,
+  },
+  // Optional: Add trailing slash for better compatibility
+  trailingSlash: true,
 }
 
 export default nextConfig
