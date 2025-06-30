@@ -1,4 +1,5 @@
 import type { Metadata } from 'next'
+import { Inter } from 'next/font/google'
 import './globals.css'
 
 export const metadata: Metadata = {
@@ -6,9 +7,6 @@ export const metadata: Metadata = {
   description: 'Document verification and validation system',
   generator: 'InVerif',
 }
-
-// This is required for GitHub Pages
-const basePath = process.env.NODE_ENV === 'production' ? '/InVerif' : '';
 
 export default function RootLayout({
   children,
@@ -18,9 +16,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        <base href={basePath} />
+        <link rel="icon" href="/favicon.ico" />
       </head>
-      <body>{children}</body>
+      <body className="min-h-screen bg-background font-sans antialiased">
+        {children}
+      </body>
     </html>
   )
 }
