@@ -3,7 +3,7 @@
 import { useEffect, useState } from 'react';
 import { CheckCircle2 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
-import { Dialog, DialogContent } from '@/components/ui/dialog';
+import { Dialog, DialogContent, DialogHeader, DialogTitle } from '@/components/ui/dialog';
 
 interface SuccessModalProps {
   isOpen: boolean;
@@ -36,8 +36,11 @@ export function SuccessModal({ isOpen, onClose }: SuccessModalProps) {
 
   return (
     <Dialog open={isOpen} onOpenChange={onClose}>
-      <DialogContent className="sm:max-w-md overflow-hidden border-0 shadow-xl">
+      <DialogContent className="sm:max-w-md overflow-hidden border-0 shadow-xl p-0">
         <div className="relative bg-gradient-to-b from-white to-blue-50 p-6">
+          <DialogHeader>
+            <DialogTitle className="sr-only">Success</DialogTitle>
+          </DialogHeader>
           {/* Animated background circles */}
           <div className="absolute inset-0 overflow-hidden pointer-events-none">
             {circles}
