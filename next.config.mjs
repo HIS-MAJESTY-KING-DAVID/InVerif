@@ -5,28 +5,35 @@ const assetPrefix = isProd ? `/${repo}/` : '';
 const basePath = isProd ? `/${repo}` : '';
 
 const nextConfig = {
+  // Disable React StrictMode for better compatibility with some libraries
+  reactStrictMode: false,
+  
+  // Disable ESLint during build
   eslint: {
     ignoreDuringBuilds: true,
   },
+  
+  // Ignore TypeScript errors during build
   typescript: {
     ignoreBuildErrors: true,
   },
-  // Disable image optimization API (not needed for static export)
+  
+  // Disable image optimization API for static export
   images: {
     unoptimized: true,
   },
+  
   // Add base path for GitHub Pages
   basePath,
   assetPrefix,
+  
   // Enable static export
   output: 'export',
-  // Optional: Add trailing slash for better compatibility
+  
+  // Add trailing slash for better compatibility
   trailingSlash: true,
-  // Ensure static export works with App Router
-  experimental: {
-    appDir: true,
-  },
-  // Handle static files
+  
+  // Webpack configuration
   webpack: (config, { isServer }) => {
     // Fixes npm packages that depend on `fs` module
     if (!isServer) {
@@ -34,10 +41,29 @@ const nextConfig = {
         fs: false,
         path: false,
         os: false,
+        tls: false,
+        net: false,
+        dns: false,
+        child_process: false,
+        dgram: false,
       };
     }
     return config;
   },
+  
+  // Environment variables
+  env: {
+    NEXT_PUBLIC_BASE_PATH: basePath,
+  },
+  
+  // Disable source maps in production
+  productionBrowserSourceMaps: false,
+  
+  // Disable ETag generation
+  generateEtags: false,
+  
+  // Disable x-powered-by header
+  poweredByHeader: false,
 }
 
 export default nextConfig
