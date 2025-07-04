@@ -42,7 +42,8 @@ export default function InvoiceVerification() {
     purchaseOrder: { id: 'purchaseOrder', label: 'Bon de commande', icon: ShoppingCart, required: true },
     invoice: { id: 'invoice', label: 'Facture', icon: FileText, required: true },
     deliveryReceipt: { id: 'deliveryReceipt', label: 'Bon de livraison', icon: Truck, required: true },
-    receipt: { id: 'receipt', label: 'Procès-verbal de réception', icon: Check, required: true }
+    receipt: { id: 'receipt', label: 'Procès-verbal de réception', icon: Check, required: true },
+    serviceContract: { id: 'serviceContract', label: 'Contrat de service', icon: AlertCircle, required: false }
   }
 
   // Document types for foreign suppliers
@@ -51,9 +52,7 @@ export default function InvoiceVerification() {
     invoice: { id: 'invoice', label: 'Facture/Proforma', icon: FileText, required: true },
     deliveryReceipt: { id: 'deliveryReceipt', label: 'Bon de livraison', icon: Truck, required: true },
     receipt: { id: 'receipt', label: 'Procès-verbal de réception', icon: Check, required: true },
-    customsDeclaration: { id: 'customsDeclaration', label: 'Déclaration d\'importation (DI)', icon: AlertCircle, required: true },
-    domiciliation: { id: 'domiciliation', label: 'Attestation de domiciliation', icon: AlertCircle, required: true },
-    serviceContract: { id: 'serviceContract', label: 'Contrat de service', icon: AlertCircle, required: true }
+    serviceContract: { id: 'serviceContract', label: 'Contrat de service', icon: AlertCircle, required: false }
   }
 
   // Get current documents based on supplier type
