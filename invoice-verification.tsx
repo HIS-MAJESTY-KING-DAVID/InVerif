@@ -42,8 +42,7 @@ export default function InvoiceVerification() {
     purchaseOrder: { id: 'purchaseOrder', label: 'Bon de commande', icon: ShoppingCart, required: true },
     invoice: { id: 'invoice', label: 'Facture', icon: FileText, required: true },
     deliveryReceipt: { id: 'deliveryReceipt', label: 'Bon de livraison', icon: Truck, required: true },
-    receipt: { id: 'receipt', label: 'Procès-verbal de réception', icon: Check, required: true },
-    serviceContract: { id: 'serviceContract', label: 'Contrat de service', icon: AlertCircle, required: false }
+    receipt: { id: 'receipt', label: 'Procès-verbal de réception', icon: Check, required: true }
   }
 
   // Document types for foreign suppliers
